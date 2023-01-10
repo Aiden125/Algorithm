@@ -1,5 +1,6 @@
 /*
-https://www.acmicpc.net/problem/10808 
+알파벳 개수 https://www.acmicpc.net/problem/10808
+배열 + 아스키 코드 활용 
 */ 
 #include <bits/stdc++.h>
 using namespace std;
