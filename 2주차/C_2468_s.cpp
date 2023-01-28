@@ -1,7 +1,7 @@
-#include <bits/stdc++.h>
+ #include <bits/stdc++.h>
 using namespace std;
 
-int mapa[101][101], e[101][101], visited[101][101], n, temp;
+int mapa[101][101], visited[101][101], n, temp;
 int result = 1;
 int dy[4] = {-1, 0, 1, 0};
 int dx[4] = {0, 1, 0, -1};
