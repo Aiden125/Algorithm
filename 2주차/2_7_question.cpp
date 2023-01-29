@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int n=3; // ¹è¿­ÀÇ Å©±â¿¡ ¸ÂÃç ÁöÁ¤ÇÏ¸éµÊ
+const int n=3; // ï¿½è¿­ï¿½ï¿½ Å©ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½
 int a[n][n], visited[n][n];
 const int dy[] = {-1, 0, 1, 0};
-const int dy[] = {0, 1, 0, -1};
+const int dx[] = {0, 1, 0, -1};
 
 void go(int y, int x) {
 	visited[y][x] = 1;
@@ -13,9 +13,9 @@ void go(int y, int x) {
 		int ny = y + dy[i];
 		int nx = x + dx[i];
 		
-		if(ny <0 || ny >=n || nx <0 || nx>=n) continue; // ²À ¸Ç ¸ÕÀú ¼±¾ð overflow, underflow ¹æÁö   
-		if(a[ny][nx] == 0) continue; // °¥¼ö¾ø´Â Áö¿ª 
-		if(visited[ny][nx]) continue; // ¹æ¹®ÇÑ Á¤Á¡ 
+		if(ny <0 || ny >=n || nx <0 || nx>=n) continue; // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ overflow, underflow ï¿½ï¿½ï¿½ï¿½   
+		if(a[ny][nx] == 0) continue; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+		if(visited[ny][nx]) continue; // ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 		go(ny, nx);
 	}
 	return;
