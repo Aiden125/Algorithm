@@ -3,7 +3,7 @@ using namespace std;
 // https://www.acmicpc.net/problem/11655
 // A = 65 , Z = 90, a = 97 , z = 122
 
-string s; // ÁÖ¾îÁö´Â ¹®ÀÚ¿­
+string s; // ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½
 string rot13;
 int bigA = 'A', bigZ = 'Z', smallA = 'a', smallZ = 'z';
 int main() {
@@ -12,14 +12,14 @@ int main() {
 	for(int i=0; i<s.length(); i++) {
 		char a = s[i];
 		
-		if(a >= bigA && a <= bigZ) { // ´ë¹®ÀÚÀÎ °æ¿ì 
+		if(a >= bigA && a <= bigZ) { // ï¿½ë¹®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 			if(a+13 > bigZ) {
 				a = a-26+13;
 			}else {
 				a += 13;
 			}
 			
-		}else if(a>=smallA && a<=smallZ) { // ¼Ò¹®ÀÚÀÎ °æ¿ì 
+		}else if(a>=smallA && a<=smallZ) { // ï¿½Ò¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
 			if(a+13 > smallZ) {
 				a = a -26 + 13;
 			}else {
