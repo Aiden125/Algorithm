@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 map<string, int> mp;
-string a[] = {"mooooon", "heeeee", "seeeeeeeeeok"};
+string a[] = {"a", "b", "c"};
 int main() {
     for(int i=0; i<3; i++){
         mp.insert({a[i], i+1});
@@ -23,13 +23,14 @@ int main() {
     mp["moon"] = 100;
 
     it = mp.find("moon");
-    // if(it != mp.end()){
-    //     cout << (*it).first << " : " << (*it).second << '\n'; // moon : 100
-    // }
-    // for(auto it : mp){
-    //     cout << (it).first << " : " << (it).second << '\n'; // heeee 2 moon 100 moooon 1 seeeeeeeok 3
-    // }
-    for(auto it = mp.begin(); it != mp.end(); it++){ // heeeee : 2 moon : 100 mooooon : 1 seeeeeeeeeok : 3
+    if(it != mp.end()){ // 없는경우 맨 끝 반환.
+        cout << (*it).first << " : " << (*it).second << '\n'; // moon : 100
+    }
+    for(auto it : mp){ // 받은 이터레이터 반복
+        cout << (it).first << " : " << (it).second << '\n'; // a : 1  b : 2 c : 3 moon : 100
+    }
+    // 받은 이터레이터 반복
+    for(auto it = mp.begin(); it != mp.end(); it++){ // a : 1  b : 2 c : 3 moon : 100
         cout << (*it).first << " : " << (*it).second << '\n';
     }
     mp.clear();
