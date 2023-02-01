@@ -109,12 +109,21 @@ abcda
 - end() : 컨테이너의 끝 다음 위치 반환
 - advance(iterator, cnt) : 해당 iterator를 cnt까지 증가
 
-
 ## sort
 정렬인데 그냥 sort하거나 less<int>() 를 이용해서 오름차순으로,
 greater<int>()를 사용해서 내림차순으로 정렬 가능하다. 
 
+- 기본 오름차순
+- pair로 이루어진 vector는 first, second, third 순으로 정렬
+- 3번째 요소까지 정렬 원한다면 sort(a[0], a[0]+3) 즉, 포인터 앞까지 정렬해줌
+
 ## map
+- key는 자동 오름차순 정렬
+- 중복된 값 안들어감
+- 조회만 해도 0이나 빈 문자가 들어감
+- mp.find(a) a를 찾았는데 없으면 end() 반환
+- mp.find(), mp.erase(), mp.clear(), mp[]=1
+
 ```
 #include <bits/stdc++.h>
 using namespace std;
