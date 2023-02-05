@@ -124,7 +124,7 @@ greater<int>()를 사용해서 내림차순으로 정렬 가능하다.
 - mp.find(a) a를 찾았는데 없으면 end() 반환
 - mp.find(), mp.erase(), mp.clear(), mp[]=1
 
-```
+```C++
 #include <bits/stdc++.h>
 using namespace std;
 map<string, int> mp;
@@ -164,5 +164,15 @@ int main() {
     return 0;
 }
 ```
+
+## string find
+- 못찾으면 string::npos 리턴
+```C++
+auto it = a.find("love");
+if (it != string::npos){
+cout << "포함되어 있다." << '\n';
+}
+```
+
 <br><br>
-69페이지부터 시작 
+array 있는 페이지부터 시작 
