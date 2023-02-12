@@ -14,17 +14,19 @@ int solution(int n, vector<vector<int>> results){
         a[results[i][0]][results[i][1]] = true;
     }
 
-    for(int i=1; i<=n; i++) {
-        for(int j=1; j<=n; j++) {
-            for(int k=1; k<=n; k++) {
-                if(a[j][i] && a[i][k]) {
-                    a[j][k] = true;
+    for(int k=1; k<=n; k++) { // 중간노드
+        for(int i=1; i<=n; i++) { // 시작노드
+            for(int j=1; j<=n; j++) { // 도착노드
+                if(a[i][j] && a[j][k]) {
+                    a[i][k] = true;
                 }
             }
         }
     }
 
-    for(int i=1; i<=n; i++) {
+    // i선수의 결과를 알 수 있는지 여부
+    // 본인제외 모두 경기를 했다면 answer++
+    for(int i=1; i<=n; i++) { 
         int count = 0;
         for(int j=1; j<=n; j++) {
             if(a[i][j] || a[j][i]) {

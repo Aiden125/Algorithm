@@ -2,25 +2,30 @@ class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
         int low=0;
-        int high=nums.size();
-        int mid = (low+high) / 2;
+        int high=nums.size()-1; // 인덱스 기준이라 -1
+        int mid = 0;
 
-        while(true){
+        while(low<=high){
+            mid = low + (high-low)/2;
+
             if(nums[mid]==target){
                 return mid;
             }
-            if(low == high){
-                return low;
+            else if(nums[mid] < target){
+                low = mid + 1;
             }
-
-            if(nums[mid]>target){
-                low = mid;
-                mid = (low+high)/2;
-            }else if(nums[mid]<target){
-                high = mid;
-                mid = (low+high)/2;
+            else if(nums[mid] > target){
+                high = mid - 1;
             }
         }
+        
+        if(nums[mid] > target){
+            mid -= 1;
+        }
+        if(nums[mid] < target) {
+            mid += 1;
+        }
+        return mid;
 
     }
 };
