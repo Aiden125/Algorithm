@@ -1,5 +1,5 @@
 /**
- * 순위 문제
+ * 순위 문제 https://school.programmers.co.kr/learn/courses/30/lessons/49191
  * 권투선수들의 순위를 구할 수 있는 선수의 수를 리턴(선수 100명 이하, 경기결과 4500개 이하)
 */
 #include <bits/stdc++.h>
