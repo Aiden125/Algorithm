@@ -1,8 +1,10 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/49189?language=cpp
+// 가장 먼 노드 https://school.programmers.co.kr/learn/courses/30/lessons/49189?language=cpp
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> v[20004];
+vector<vector<int>> graph[20004];
+vector<int> counts[20004];
+vector<int> visited[20004];
 int a, b; // node 1,2
 int root;
 
@@ -14,8 +16,8 @@ int solution(int n, vector<vector<int>> edge) {
         int a = edge[i][0];
         int b = edge[i][1];
 
-        v[a].push_back(b);
-        v[b].push_back(a);
+        graph[a].push_back(b);
+        graph[b].push_back(a);
 
         if(a==1) root = i;
     }
