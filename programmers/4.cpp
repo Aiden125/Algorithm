@@ -27,7 +27,7 @@ bool solution(string s){
     return answer;
 }
 
-
+/** main은 테스트용 */
 int main() {
     cin >> s;
     bool ans = solution(s);
