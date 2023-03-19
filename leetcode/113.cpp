@@ -11,45 +11,34 @@
  */
 class Solution {
 public:
-    void dfs(TreeNode* node, int targetSum, vector<int> vec, vector<vector<int>> vvec) {
-        
-        // null인지 체크
-        if (node == nullptr) {
-            return;
-        }
-        
-        vec.push_back(node->val); //value를 담아주자
+    //전역변수
+    vector<int> path;
+    vector<vector<int>> v;
 
-        // 리프 노드 인지 체크 하고 썸
-        if (node->left == nullptr && node->right == nullptr) {
-            if (node->val == targetSum) {
-                vvec.push_back(vec);
-            }
-            return;
+    void dfs(TreeNode* root, int targetSum) {
+        if(root == nullptr) return;
+
+        path.push_back(root->val);
+        targetSum = targetSum - root->val;
+
+        if(root->left == nullptr && root->right == nullptr && targetSum==0) {
+            v.push_back(path);
         }
 
-        // 왼쪽 노드 인지 체크
-        if (node->left != nullptr) {
-            targetSum -= node->val;
-            dfs(node->left, targetSum, vec, vvec);
-            vec.pop_back();
+        if(root->left != nullptr){
+            dfs(root->left, targetSum);
+            path.pop_back();
         }
-
-        // 오른쪽 노드 인지 체크
-        if (node->right != nullptr) {
-            targetSum -= node->val;
-            dfs(node->right, targetSum, vec, vvec);
-            vec.pop_back();
+        if(root->right != nullptr){
+            dfs(root->right, targetSum);
+            path.pop_back();
         }
         
     }
+    
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
-        
-        // 한번 계산할 벡터, 답변용 벡터, dfs
-        vector<int> vec; // 해당 노드 sum 구할 배열
-        vector<vector<int>> vvec; // 답변 배열
-        dfs(root, targetSum, vec, vvec);
+        dfs(root, targetSum);
 
-        return vvec;
+        return v;
     }
 };
