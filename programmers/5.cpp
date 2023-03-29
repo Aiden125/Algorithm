@@ -6,48 +6,24 @@ using namespace std;
 2. k 만큼 실제로 잘라주고 그래도 k가 남으면 더 자를것들을 안에서 찾는다.
 */
 
-string solution(string number, int k) {
-    string answer = "";
-    int numberSize = number.length();
-    bool numbers[numberSize];
-    memset(numbers, 1, sizeof(numbers));
-
-    int max = 0;
-    int index = 0;
-    int standardK = numberSize - k;
-    for(int i=0; i<standardK; i++){
-        if(max<number[i]){
-            max = number[i];
-            index = i;
-        }
-    }
-    
-    for(int i=0; i<index; i++){
-        numbers[i] = 0;
-    }
-
-    int decayK = k - index;
-    int minusNum = 0;
-    for(int i=index; i<numberSize; i++){
-        if(number[i] < number[i+1]) {
-            numbers[i] = 0;
-            decayK -= 1;
-        }
-        if(decayK <= 0) break;
-    }
-
-    while(decayK >= 0) {
-        numbers[numberSize - decayK] = false;
-        decayK--;
-    }
-
-    for(int i=0; i<numberSize; i++) {
-        if(numbers[i]){
-            answer += number[i];
-        }
-    }
-
-    return answer;
+string solution(string number, int k)
+{
+	string answer = "";
+    int idx = -1;
+	for (int i=0; i<number.length()-k; i++) 
+	{
+		char max = 0;
+		for (int j=idx + 1; j<=k+i; j++) 
+		{
+			if (max < number[j]) 
+			{
+				idx = j;
+				max = number[j];
+			}
+		}
+		answer += max;
+	}
+	return answer;
 }
 
 int main() {
