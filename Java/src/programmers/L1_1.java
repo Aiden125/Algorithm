@@ -1,5 +1,8 @@
 package programmers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class L1_1 {
     public static void main(String[] args) {
         Solution1_1 st = new Solution1_1();
@@ -8,16 +11,19 @@ public class L1_1 {
 }
 class Solution1_1 {
     public int[] solution(String s) {
-        int[] answer = {};
+        int[] answer = new int[s.length()];
 
-        int[] b = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
 
-        for(int i=0; i<s.length(); i++) {
-            int cc = s.charAt(i)-97;
-            if(b[cc] == -1) {
-                b[cc] = i+1;
+        for (int i=0; i<s.length(); i++) {
+            char a = s.charAt(i);
+            if (map.get(a) == null) {
+                answer[i] = -1;
+            }else {
+                answer[i] = i - map.get(a);
             }
-            answer[i] = b[cc];
+            map.put(a, i);
+
         }
         return answer;
     }
