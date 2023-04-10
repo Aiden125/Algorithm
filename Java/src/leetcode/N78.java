@@ -3,7 +3,11 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-// https://leetcode.com/problems/subsets/
+/**
+ * 리트코드 subset
+ * https://leetcode.com/problems/subsets/
+ * */
+
 public class N78 {
     public static void main(String[] args) {
         Solution78 st = new Solution78();
