@@ -24,16 +24,19 @@ public class I8_1 {
     }
     public void dfs(int depth, int sum, int[] arr){
 
+        // 제반조건
         if(flag) return;
         if(sum > total/2) return;
+
+        // depth가 끝까지 왔을 때 최종 비교
         if(depth == n) {
             if((total-sum) == sum) {
                 answer = "YES";
                 flag = true;
             }
         }else {
-            dfs(depth+1, sum+arr[depth], arr);
-            dfs(depth+1, arr[depth], arr);
+            dfs(depth+1, sum+arr[depth], arr); // 다 더함
+            dfs(depth+1, arr[depth], arr); // 다 안더함
         }
 
     }
