@@ -1,5 +1,5 @@
 package inflearn;
-
+// 최대 점수 구하기 - https://cote.inflearn.com/contest/10/problem/08-03
 import java.util.Scanner;
 
 public class I8_3 {
