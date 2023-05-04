@@ -11,6 +11,14 @@ public class L5_NumbersOfRoom {
             this.x = x;
             this.y = y;
         }
+        
+        
+        // equals, hasCode 수완님꺼 보고 참고해서 override 하기
+        // equals는 객체 비교할 때, 같은 값을 가지는 객체로 인식시켜주기 위해서는 반드시 구현해줘야한다.
+        // 객체끼리 비교할 때는 equals를 써야하고 equals를 구현할 때 hasCode도 같이 써야한다
+
+        // 예외로 dto같은 '값 객체'의 경우는 같은 값이 날라오더라도 다른 값으로
+        // 인식을 해야되기 때문에 값 객체에서는 equals, hasCode를 사용하지 않아도 된다.
 
     }
     public static int solution(int[] arrows) {
