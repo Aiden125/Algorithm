@@ -11,7 +11,7 @@ public class I2_8 {
 
         int n = sc.nextInt();
         int[] arr = new int[n];
-        ArrayList<Integer, Integer> al = new ArrayList<>();
+        ArrayList<Integer> al = new ArrayList<>();
         for(int i=0; i<n; i++) {
             int a = sc.nextInt();
             arr[i] = a;
