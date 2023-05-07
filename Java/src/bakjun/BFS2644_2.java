@@ -16,13 +16,17 @@ public class BFS2644_2 {
         int n = sc.nextInt(); // 사람 수
         int start = sc.nextInt();
         int end = sc.nextInt();
-        int relation = sc.nextInt(); //
+        int peopleRelation = sc.nextInt(); //
 
-        list = new ArrayList[n+1]; // 관계
+        list = new ArrayList[n+1];
         visited = new boolean[n+1];
         distance = new int[n+1];
 
-        for(int i=0; i<relation; i++) {
+        for(int i=1; i<=n; i++) {
+            list[i] = new ArrayList<>();
+        }
+
+        for(int i=0; i<peopleRelation; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
 
@@ -46,15 +50,15 @@ public class BFS2644_2 {
         visited[start] = true;
 
         while(!q.isEmpty()) {
-            int a = q.poll();
+            int vertex = q.poll();
 
-            for(int i=0; i<q.size(); i++) {
-                int next = list[a].get(i);
+            for(int i=0; i<list[vertex].size(); i++) {
+                int next = list[vertex].get(i);
 
                 if(!visited[next]) {
                     q.offer(next);
                     visited[next] = true;
-                    distance[next] = distance[a]+1;
+                    distance[next] = distance[vertex]+1;
                 }
             }
         }

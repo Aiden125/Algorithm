@@ -13,7 +13,7 @@ public class BFS2644 {
         int n = sc.nextInt(); // 사람 수
         int targetA = sc.nextInt(); // start
         int targetB = sc.nextInt(); // end
-        int pepopleNum = sc.nextInt();
+        int peopleNum = sc.nextInt();
 
         graph = new ArrayList[n+1];
         visited = new boolean[n+1];
@@ -24,7 +24,7 @@ public class BFS2644 {
             graph[i] = new ArrayList<>();
         }
 
-        for (int i=0; i<pepopleNum; i++) {
+        for (int i=0; i<peopleNum; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
 
