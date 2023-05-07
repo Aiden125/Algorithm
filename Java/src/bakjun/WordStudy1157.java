@@ -34,6 +34,7 @@ public class WordStudy1157 {
         if(count > 1) {
             System.out.println("?");
         }else {
+            // 명시적 형변환을 사용하면됨 복잡하게 생각하지 않아도 됨
             char xx = (char)(index+65);
             System.out.println(xx);
         }
