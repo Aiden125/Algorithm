@@ -13,13 +13,13 @@ public class B1213 {
         // 배열에 카운트 담기
         for(int i=0; i<s.length(); i++) {
             char cc = s.charAt(i);
-            a[cc-97] = a[cc-97]+1;
+            a[cc-65] = a[cc-65]+1;
         }
 
         // 카운트를 기준으로 홀 수가 두개 이상인 경우 분류
         int evenCheck = 0; // evenCheck = 0일 경우 짝만, 1일 경우 홀 1개 2이상일 경우 불가
         for(int i=0; i<a.length; i++) {
-            int ccc = a[0];
+            int ccc = a[i];
             if (ccc%2 != 0) evenCheck++;
         }
 
@@ -29,9 +29,15 @@ public class B1213 {
             int oddNumIndex = -999;
             for(int i=0; i<a.length; i++) {
                 if(a[i]%2 == 1){
+                    if (a[i] > 2) {
+                        char oddChar = (char) (i+65);
+                        for(int j=0; j<a[i]/2; j++) {
+                            answer += oddChar;
+                        }
+                    }
                     oddNumIndex = i;
                 } else if (a[i]>0 && a[i]%2 == 0){
-                    char oddChar = (char) (i+97-'0');
+                    char oddChar = (char) (i+65);
                     for(int j=0; j<a[i]/2; j++) {
                         answer += oddChar;
                     }
@@ -44,10 +50,10 @@ public class B1213 {
             if (oddNumIndex == -999) {
                 answer = answer + answerReverse;
             } else {
-                answer = answer + (a[oddNumIndex]-'0') + answerReverse;
+                answer = answer + ((char)(oddNumIndex+65)) + answerReverse;
             }
 
-
+            System.out.println(answer);
         }
     }
 }
