@@ -1,4 +1,4 @@
-package programmers;
+package programmers.level1;
 
 public class L1_Repainting {
     public static void main(String[] args) {

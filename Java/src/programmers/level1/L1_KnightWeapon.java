@@ -1,4 +1,4 @@
-package programmers;
+package programmers.level1;
 
 public class L1_KnightWeapon { // O(루트n)
     public static void main(String[] args) {

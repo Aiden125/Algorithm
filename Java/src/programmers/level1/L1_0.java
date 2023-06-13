@@ -1,4 +1,4 @@
-package programmers;
+package programmers.level1;
 /**
  * 문자열 나누기 문제
  * https://school.programmers.co.kr/learn/courses/30/lessons/140108
