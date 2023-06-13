@@ -14,11 +14,12 @@ public class L1_AppleBox {
 
     public static int solution(int k, int m, int[] score) {
         int answer = 0;
+        // 사과들 정렬
         Arrays.sort(score);
-        int appleNum = score.length; // 7
+        int appleNum = score.length; // 사과박스 size
 
-        int index = appleNum-m; // 33 30
-        while(index >= 0) { // 인덱스 기준이라 1 작음
+        int index = appleNum-m; // 오름차순이기 때문에 시작 인덱스를 큰쪽에서부터
+        while(index >= 0) {
             answer += (score[index] * m);
             index -= m;
         }
