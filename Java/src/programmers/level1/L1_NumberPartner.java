@@ -16,39 +16,30 @@ public class L1_NumberPartner {
         System.out.println(solution(X3, Y3));
     }
     public static String solution(String X, String Y) {
-        String answer = "";
-
         StringBuilder sb = new StringBuilder();
         int[] a = new int[10];
         int[] b = new int[10];
 
-        for(int i=0; i<X.length(); i++) {
-            int target = Integer.parseInt(String.valueOf(X.charAt(i)));
-            a[target]++;
+        for(String x : X.split("")){
+            a[Integer.parseInt(x)]++;
         }
 
-        for(int i=0; i<Y.length(); i++) {
-            int target = Integer.parseInt(String.valueOf(Y.charAt(i)));
-            b[target]++;
+        for(String y : Y.split("")){
+            b[Integer.parseInt(y)]++;
         }
 
         for(int i=9; i>=0; i--) {
             int numberCount = Math.min(a[i], b[i]);
             if (numberCount != 0) {
+                if (sb.toString().length() == 0 && i==0) {
+                    return "0";
+                }
                 for(int j=0; j<numberCount; j++) {
-                    if (sb.toString().length() == 0 && i==0) {
-                        return "0";
-                    }
                     sb.append(i);
                 }
             }
         }
 
-        answer = sb.toString();
-        if (answer.length() == 0) {
-            answer = "-1";
-        }
-
-        return answer;
+        return sb.toString().length() == 0 ? "-1" : sb.toString();
     }
 }
