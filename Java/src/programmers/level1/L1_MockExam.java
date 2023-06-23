@@ -1,7 +1,7 @@
 package programmers.level1;
 
 import java.util.Arrays;
-
+// L1_모의고사
 public class L1_MockExam {
     public static void main(String[] args) {
 
