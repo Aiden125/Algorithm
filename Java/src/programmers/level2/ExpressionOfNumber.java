@@ -1,5 +1,7 @@
 package programmers.level2;
 
+// 프2 숫자의 표현
+// https://school.programmers.co.kr/learn/courses/30/lessons/12924
 public class ExpressionOfNumber {
     public static void main(String[] args) {
 
