@@ -10,7 +10,7 @@ public class B1541 {
         for(int i=0; i<a.length; i++) {
             String b[] = a[i].split("+");
             for(int j=0; j<b.length; j++) {
-                
+
             }
         }
     }

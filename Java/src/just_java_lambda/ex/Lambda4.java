@@ -31,5 +31,6 @@ public class Lambda4 {
 
         // map의 모든 요소를 k, v 형식으로 출력
         map.forEach((k, v) -> System.out.println("k="+k +", v="+v));
+
     }
 }
