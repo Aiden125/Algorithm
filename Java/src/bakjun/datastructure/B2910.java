@@ -11,10 +11,13 @@ public class B2910 {
         int n = sc.nextInt();
         int c = sc.nextInt();
         HashMap<Integer, Integer> map = new HashMap<>();
+        ArrayList<Integer> origin = new ArrayList<>();
         ArrayList<Integer> arr = new ArrayList<>();
+
         for (int i=0; i<n; i++) {
             int a = sc.nextInt();
             map.put(a, map.getOrDefault(a, 0) + 1);
+            origin.add(a);
             arr.add(a);
         }
 
@@ -22,7 +25,7 @@ public class B2910 {
         Collections.sort(arr, (o1, o2) -> {
             // 빈도 수 같은 경우 원래 입력 순서 유지
            if (map.get(o1) == map.get(o2)) {
-               return arr.indexOf(o1) - arr.indexOf(o2);
+               return origin.indexOf(o1) - origin.indexOf(o2);
            } else { // 빈도수 다를 경우 빈도수 기준으로 내림차순
                return Integer.compare(map.get(o2), map.get(o1));
            }
