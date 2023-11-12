@@ -13,26 +13,29 @@ public class B9046 {
         for (int i=0; i<n; i++) {
             int[] arr = new int[26];
             String s = br.readLine().replaceAll(" ", "");
+
             int max = -1;
-            for (char c : s.toCharArray()) {
-                int idx = c - 97;
-                arr[idx]++;
-                if (arr[idx] > max) {
-                    max = arr[idx];
+            for (int j=0; j<s.length(); j++) {
+                int charValue = s.charAt(j) - 97;
+                arr[charValue]++;
+                if (arr[charValue] > max) {
+                    max = j;
                 }
             }
 
             int maxValueCount = 0;
+            int finalIndex = 0;
             for (int j=0; j<arr.length; j++) {
                 if (arr[j] == max) {
                     maxValueCount++;
+                    finalIndex = j;
                 }
             }
 
             if (maxValueCount > 1) {
                 System.out.println("?");
             } else {
-                System.out.println((char) (arr[max]+97));
+                System.out.println((char) (arr[finalIndex]+97));
             }
         }
     }
