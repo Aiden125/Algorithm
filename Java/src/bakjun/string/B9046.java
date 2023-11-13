@@ -2,9 +2,7 @@ package bakjun.string;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class B9046 {
     public static void main(String[] args) throws IOException {
@@ -14,19 +12,19 @@ public class B9046 {
             int[] arr = new int[26];
             String s = br.readLine().replaceAll(" ", "");
 
-            int max = -1;
+            int maxCount = -1;
             for (int j=0; j<s.length(); j++) {
                 int charValue = s.charAt(j) - 97;
                 arr[charValue]++;
-                if (arr[charValue] > max) {
-                    max = j;
+                if (arr[charValue] > maxCount) {
+                    maxCount = arr[charValue];
                 }
             }
 
             int maxValueCount = 0;
             int finalIndex = 0;
             for (int j=0; j<arr.length; j++) {
-                if (arr[j] == max) {
+                if (arr[j] == maxCount) {
                     maxValueCount++;
                     finalIndex = j;
                 }
@@ -35,7 +33,7 @@ public class B9046 {
             if (maxValueCount > 1) {
                 System.out.println("?");
             } else {
-                System.out.println((char) (arr[finalIndex]+97));
+                System.out.println((char) (finalIndex+97));
             }
         }
     }
