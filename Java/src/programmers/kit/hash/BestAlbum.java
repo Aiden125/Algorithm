@@ -31,6 +31,7 @@ public class BestAlbum {
         List<Integer> list = new ArrayList<>();
         for (String g : genrs) {
 
+            // 첫번째로 재생 수 많은 인덱스 찾기
             int max = -1;
             int firstIndex = -1;
             for (int i=0; i<plays.length; i++) {
@@ -40,6 +41,7 @@ public class BestAlbum {
                 }
             }
 
+            // 두번째로 많은 인덱스 찾기
             max = -1;
             int secondIndex = -1;
             for (int i=0; i<plays.length; i++) {
