@@ -13,24 +13,24 @@ public class NotCompletePlayer {
         String answer = "";
 
         HashMap<String, Integer> map = new HashMap<>();
-        
-        // 지원자들 이름과 수 누적시키기(같은 이름도 있으니까 orDefault 활용)
-        for (String a : participant) {
-            map.put(a, map.getOrDefault(a, 0) + 1);
-        }
-        
-        // 완료한사람들은 빼버리기
-        for (String comp : completion) {
-            map.put(comp, map.get(comp)-1);
+        // 1. 선수 명단 세팅
+        for (String p : participant) {
+            map.put(p, map.getOrDefault(p, 0) + 1);
         }
 
-        // 지원자 중 아직 1인 값을 가진 이름 정답에 할당
-        for (String a : participant) {
-            int count = map.get(a);
-            if (count > 0) {
-                answer = a;
+        // 2. 완료한 사람은 -1
+        for (String p : completion) {
+            map.put(p, map.getOrDefault(p, 0) - 1);
+        }
+
+        // 3. value가 1인 사람의 이름을 answer에 저장
+        for (String p : participant) {
+            int a = map.get(p);
+            if (a == 1) {
+                answer = p;
             }
         }
+
         return answer;
     }
 }
