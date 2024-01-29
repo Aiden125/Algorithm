@@ -1,4 +1,4 @@
-package programmers.kit.dfs;
+package programmers.kit.dfsbfs;
 
 public class TargetNumber {
     static int answer = 0;
