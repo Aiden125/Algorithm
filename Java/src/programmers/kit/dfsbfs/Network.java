@@ -7,9 +7,9 @@ import java.util.Queue;
 
 public class Network {
     public static void main(String[] args) {
-//        int n1 = 3;
-//        int[][] a1 = {{1,1,0}, {1,1,0}, {0,0,1}};
-//        System.out.println(Network.solution(n1, a1)); // 2
+        int n1 = 3;
+        int[][] a1 = {{1,1,0}, {1,1,0}, {0,0,1}};
+        System.out.println(Network.solution(n1, a1)); // 2
 
         int n2 = 3;
         int[][] a2 = {{1,1,0}, {1,1,1}, {0,1,1}};
@@ -37,12 +37,16 @@ public class Network {
             if (visited[i]) {
                 continue;
             }
-            if (arr.get(i).size() != 0) {
-                Queue<Integer> q = new LinkedList<>();
-                Iterator<Integer> it = arr.get(i).iterator();
+            Queue<Integer> q = new LinkedList<>();
+            q.add(i);
+            while (!q.isEmpty()) {
+                int index = q.poll();
+                if (visited[index]) continue;
+                visited[index] = true;
+                Iterator<Integer> it = arr.get(index).iterator();
                 while (it.hasNext()) {
-                    int index = it.next();
-                    visited[index] = true;
+                    int nextIndex = it.next();
+                    q.add(nextIndex);
                 }
             }
             visited[i] = true;
