@@ -1,23 +1,23 @@
 package programmers.kit.dfsbfs;
 
-public class ChangeWord {
+public class ChangeWord_DFS {
     static int answer = 999;
     public static void main(String[] args) {
 
 //        String a1 = "hit";
 //        String b1 = "cog";
 //        String[] c1 = {"hot", "dot", "dog", "lot", "log", "cog"};
-//        System.out.println(ChangeWord.solution(a1, b1, c1)); // 4
+//        System.out.println(ChangeWord_DFS.solution(a1, b1, c1)); // 4
 
 //        String a2 = "hit";
 //        String b2 = "cog";
 //        String[] c2 = {"hot", "dot", "dog", "lot", "log"};
-//        System.out.println(ChangeWord.solution(a2, b2, c2)); // 0
+//        System.out.println(ChangeWord_DFS.solution(a2, b2, c2)); // 0
 
         String a3 = "hit";
         String b3 = "hot";
         String[] c3 = {"hot", "dot", "dog", "lot", "log"};
-        System.out.println(ChangeWord.solution(a3, b3, c3)); // 1
+        System.out.println(ChangeWord_DFS.solution(a3, b3, c3)); // 1
 
 
     }
@@ -54,13 +54,16 @@ public class ChangeWord {
                         break;
                     }
                 }
+                // 다음 단어로 가능하면 방문
                 if (canNext == 1) {
                     nextWord = a;
                     currentIndex = i;
                     visited[i] = true;
+                    // 타겟과 다음단어가 일치하면 다음뎁스를 answer로 저장
                     if (nextWord.equals(target)) {
                         answer = Math.min(answer, depth + 1);
                     }
+                    // 방문 끝나면 visited 해제해주기
                     DFS(depth + 1, nextWord, target, words, visited);
                     visited[currentIndex] = false;
                 }
