@@ -1,4 +1,4 @@
-package programmers.study;
+package nowon_study.week1;
 
 import java.util.HashMap;
 

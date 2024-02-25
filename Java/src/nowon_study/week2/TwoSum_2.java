@@ -1,4 +1,4 @@
-package leetcode.study;
+package nowon_study.week2;
 
 import java.util.Arrays;
 
