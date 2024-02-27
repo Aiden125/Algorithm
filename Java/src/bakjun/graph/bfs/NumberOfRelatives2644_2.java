@@ -1,27 +1,11 @@
-package bakjun.dfsbfs;
+package bakjun.graph.bfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-// 틀린 답, 반례 https://www.acmicpc.net/board/view/136445
 
-/**
-10
-7 6
-9
-1 2
-1 3
-1 4
-9 1
-9 10
-3 5
-3 6
-2 7
-2 8
- * expect : 4 but, answer : 5
- */
-public class NumberOfRelatives2644 {
+public class NumberOfRelatives2644_2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -29,6 +13,7 @@ public class NumberOfRelatives2644 {
         int b = sc.nextInt();
         int r = sc.nextInt();
         boolean[] visited = new boolean[n+1];
+        int[] dis = new int[n+1];
         ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
         for (int i=0; i<=n; i++) {
             arr.add(new ArrayList<>());
@@ -40,27 +25,22 @@ public class NumberOfRelatives2644 {
             arr.get(p2).add(p1);
         }
 
-        int count = 1;
         Queue<Integer> q = new LinkedList<>();
         q.offer(a);
-        boolean found = false;
-        while (!q.isEmpty() && !found) {
+        while (!q.isEmpty()) {
             int current = q.poll();
-            visited[current] = true;
+            visited[current] = true; // 이걸 어디 두는지는 상관x
             ArrayList<Integer> nexts = arr.get(current);
             for (int next : nexts) {
-                if (next == b) {
-                    System.out.println(count);
-                    found = true;
-                    break;
-                }
                 if (visited[next]) continue;
                 q.offer(next);
+                dis[next] = dis[current] + 1;
             }
-            count++;
         }
-        if (!found) {
-            System.out.println("-1");
+        if (dis[b] > 0) {
+            System.out.println(dis[b]);
+        } else {
+            System.out.println(-1);
         }
     }
 }

@@ -1,4 +1,4 @@
-package bakjun.dfsbfs;
+package bakjun.graph.dfs;
 
 import java.util.Scanner;
 
