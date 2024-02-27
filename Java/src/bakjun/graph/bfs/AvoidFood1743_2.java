@@ -12,11 +12,10 @@ import java.util.Scanner;
  * 2 3
  * 1 1
  */
-public class AvoidFood1743 {
+public class AvoidFood1743_2 {
     static int[] dx = {-1, 0, 1, 0};
     static int[] dy = {0, 1, 0, -1};
     static boolean[][] board;
-    static boolean[][] visited;
     static int n, m, k;
 
     public static void main(String[] args) {
@@ -26,7 +25,6 @@ public class AvoidFood1743 {
         k = sc.nextInt();
 
         board = new boolean[n+1][m+1];
-        visited = new boolean[n+1][m+1];
 
         for (int i=0; i<k; i++) {
             board[sc.nextInt()][sc.nextInt()] = true; // 음식물이 있는 경우
@@ -36,7 +34,7 @@ public class AvoidFood1743 {
         for (int i=1; i<=n; i++) {
             for (int j=1; j<=m; j++) {
                 // 음식물이 있으면서 방문 안한경우 방문
-                if (board[i][j] && !visited[i][j]) {
+                if (board[i][j]) {
                     countMax = Math.max(countMax, BFS(i, j));
                 }
             }
@@ -49,7 +47,7 @@ public class AvoidFood1743 {
         int answer = 1;
         Queue<int[] > q = new LinkedList<>();
         q.offer(new int[] {x, y});
-        visited[x][y] = true;
+        board[x][y] = false;
 
         while (!q.isEmpty()) {
             int[] current = q.poll();
@@ -57,9 +55,9 @@ public class AvoidFood1743 {
                 int nx = current[0] + dx[k];
                 int ny = current[1] + dy[k];
                 if (nx < 1 || nx > n || ny < 1 || ny > m) continue;
-                if (visited[nx][ny] || !board[nx][ny]) continue;
+                if (!board[nx][ny]) continue;
                 q.offer(new int[] {nx, ny});
-                visited[nx][ny] = true;
+                board[nx][ny] = false;
                 answer++;
             }
         }
