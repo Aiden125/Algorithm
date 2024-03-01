@@ -48,7 +48,7 @@ public class Tomato7576_3 {
 
         BFS(q);
 
-        if (remainCount > 0) count = 1;
+        if (remainCount > 0) count = -1;
         System.out.println(count);
 
     }
@@ -63,7 +63,7 @@ public class Tomato7576_3 {
                 if (nx < 0 || nx >= n || ny < 0 || ny >= m) {
                     continue;
                 }
-                if (board[nx][ny] == -1 || dis[nx][ny] > 0) {
+                if (board[nx][ny] != 0 || dis[nx][ny] > 0) {
                     continue;
                 }
                 q.offer(new int[] {nx, ny});
