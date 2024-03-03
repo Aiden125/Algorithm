@@ -25,7 +25,7 @@ public class TwoSum162_2 {
 
         while (true) { // 답이 무조건 있다고 주어지기에 true로
             int leftValue = numbers[left];
-            int rightValue = numbers[right];
+            int rightValue = numbers[right]; // 2,7,11,15
 
             int sum = leftValue + rightValue;
             if (sum == target) {

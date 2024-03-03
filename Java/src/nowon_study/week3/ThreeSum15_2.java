@@ -27,7 +27,7 @@ public class ThreeSum15_2 {
                 firstIndex++;
                 continue;
             }
-            // 작은 값 처리
+            // 작은 값 처리 -4, -1, -1, 0, 1, 2
             if (-firstValue > nums[nums.length-2] + nums[nums.length-1]) {
                 firstIndex++;
                 continue;

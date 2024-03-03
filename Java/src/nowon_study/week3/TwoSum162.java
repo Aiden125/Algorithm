@@ -20,14 +20,16 @@ public class TwoSum162 {
     }
 
     static public int[] twoSum(int[] numbers, int target) {
+        // 해시맵 선언하고 넣어주는 부분, key, value
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i=0; i<numbers.length; i++) {
             map.put(numbers[i], i);
         }
+        // for문을 하나만 돌리면서
         for (int i=0; i<numbers.length; i++) {
             int currentTarget = target - numbers[i];
             int secondIndex = map.getOrDefault(currentTarget, -1);
-            if (map.getOrDefault(currentTarget, -1) >= 0) {
+            if (secondIndex >= 0) {
                 return new int[] {i+1, secondIndex+1};
             }
         }
