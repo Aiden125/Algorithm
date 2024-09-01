@@ -2,6 +2,9 @@ package inflearn2.a_simulation;
 
 import java.util.*;
 
+// 1. int를 char로 전환하는 방법
+// 2. 절대값으로 거리 계산(발판이 넓어져도 동일하게 계산가능, 4방향 탐색의 경우 별도 예외처리 필요)
+
 public class A_7_PassWord
 {
     public int solution(int[] keypad, String password){
@@ -41,7 +44,7 @@ public class A_7_PassWord
  		System.out.println(T.solution(new int[]{2, 5, 3, 7, 1, 6, 4, 9, 8}, "7596218")); // 8
  		System.out.println(T.solution(new int[]{1, 5, 7, 3, 2, 8, 9, 4, 6}, "63855526592")); // 12
  		System.out.println(T.solution(new int[]{2, 9, 3, 7, 8, 6, 4, 5, 1}, "323254677")); // 13
-        System.out.println(T.solution(new int[]{1, 6, 7, 3, 8, 9, 4, 5, 2}, "3337772122")); // 8
+        System.out.println(T.solution(new int[]{12, 6, 7, 3, 8, 9, 4, 5, 2}, "3337772122")); // 8
     }
 
 }
