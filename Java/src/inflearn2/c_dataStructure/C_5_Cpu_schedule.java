@@ -17,7 +17,7 @@ public class C_5_Cpu_schedule {
         PriorityQueue<int[]> pq = new PriorityQueue<>((a,b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]); // 첫번째 원소 비교 후 두번째 원소 비교
         int endTime = 0;
         pq.offer(new int[]{inList[0][1], inList[0][2]});
-        endTime = inList[0][0]; // 시작 시간 넣어주는거 까먹지 말기
+        endTime = inList[0][0]; // 소요시간이 아니라 시작 시간으로 넣어주는거 까먹지 말기
         int cIndex = 1;
         int outIndex = 0;
 
