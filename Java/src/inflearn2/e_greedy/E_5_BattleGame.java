@@ -2,7 +2,7 @@ package inflearn2.e_greedy;
 
 import java.util.*;
 
-public class E_WarGame {
+public class E_5_BattleGame {
     public int[] solution(String[] students) {
         int n = students.length;
         int[] answer = new int[n];
@@ -43,7 +43,7 @@ public class E_WarGame {
     }
 
     public static void main(String[] args) {
-        E_WarGame T = new E_WarGame();
+        E_5_BattleGame T = new E_5_BattleGame();
         System.out.println(Arrays.toString(T.solution(new String[]{"a 20", "b 12", "a 10", "c 11", "e 12"})));
         System.out.println(Arrays.toString(T.solution(new String[]{"a 17", "b 12", "a 10", "c 11", "b 24", "a 25", "b 12"})));
         System.out.println(Arrays.toString(T.solution(new String[]{"b 20", "c 15", "a 200", "b 11", "b 24", "a 25", "b 12"})));
