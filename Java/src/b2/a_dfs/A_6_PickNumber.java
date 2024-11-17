@@ -44,8 +44,12 @@ public class A_6_PickNumber {
             }
             if (isCycle) {
                 selfArray.addAll(nodePath);
+                for (int x : nodePath) {
+                    visited[x] = true;
+                }
+            } else {
+                visited[i] = true;
             }
-            visited[i] = true;
         }
 
         Collections.sort(selfArray);
