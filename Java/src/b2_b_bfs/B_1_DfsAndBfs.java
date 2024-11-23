@@ -3,7 +3,7 @@ package b2_b_bfs;
 import java.io.*;
 import java.util.*;
 public class B_1_DfsAndBfs {
-    static ArrayList<ArrayList<Integer>> arr;
+    static List<ArrayList<Integer>> arr;
     static boolean[] visited;
     static StringBuilder sb;
     public static void main(String[] args) throws IOException {
